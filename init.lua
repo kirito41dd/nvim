@@ -1,8 +1,9 @@
 local set = vim.o
 set.number = true         --行号
 set.clipboard = "unnamed" --剪切板和系统打通
-set.tablestop = 4         --tab长度
-set.shiftwidth = 4        --自动缩进的长度
+--set.tablestop = 4         --tab长度
+--set.shiftwidth = 4        --自动缩进的长度
+--set.autoindent = true
 require("autocmd")
 require("keymap")
 
