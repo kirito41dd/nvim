@@ -7,3 +7,11 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 		})
 	end,
 })
+
+--toggleterm终端窗口keymapping
+vim.api.nvim_create_autocmd({ "TermOpen" }, {
+	pattern = { "term://*" },
+	callback = function()
+		require("keymap").toggleterm()
+	end
+})

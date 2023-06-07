@@ -4,8 +4,11 @@ set.clipboard = "unnamed" --剪切板和系统打通
 --set.tablestop = 4         --tab长度
 --set.shiftwidth = 4        --自动缩进的长度
 --set.autoindent = true
+set.splitbelow=true -- 控制默认的分屏方向
+set.splitright=true
+
 require("autocmd")
-require("keymap")
+require("keymap").setup()
 
 --lazy.vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
