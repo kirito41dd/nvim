@@ -4,8 +4,8 @@ set.clipboard = "unnamed" --剪切板和系统打通
 --set.tablestop = 4         --tab长度
 --set.shiftwidth = 4        --自动缩进的长度
 --set.autoindent = true
-set.splitbelow=true -- 控制默认的分屏方向
-set.splitright=true
+set.splitbelow = true -- 控制默认的分屏方向
+set.splitright = true
 
 require("autocmd")
 require("keymap").setup()
@@ -25,5 +25,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 --end lazy 确保leader key的设置(keymap)在lazy之前
-vim.cmd.colorscheme("hardhacker")
+
+-- 只在gui启用主题
+if vim.g.neovide then
+	-- vim.cmd.colorscheme("hardhacker")
+	-- vim.cmd.colorscheme("catppuccin-latte")
+	vim.o.background = "light"
+	vim.cmd.colorscheme("one-nvim")
+end
+
 require("lsp-setup")

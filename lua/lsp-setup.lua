@@ -34,6 +34,21 @@ require("mason-lspconfig").setup_handlers {
 			}
 		}
 	end,
+	["gopls"] = function()
+		lspconfig.gopls.setup {
+			cmd = { "gopls", "serve" },
+			filetypes = { "go", "gomod" },
+			root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
+			settings = {
+				gopls = {
+					analyses = {
+						unusedparams = true,
+					},
+					staticcheck = true,
+				},
+			},
+		}
+	end,
 	["lua_ls"] = function()
 		lspconfig.lua_ls.setup {
 			settings = {

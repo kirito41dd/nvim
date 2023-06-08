@@ -60,7 +60,9 @@ function module.setup()
 			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, merge_a2b(opts, { desc = "lsp重命名" }))
 			vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action,
 				merge_a2b(opts, { desc = "code action" }))
-			vim.keymap.set('n', 'gr', vim.lsp.buf.references, merge_a2b(opts, { desc = "列出所有引用的地方" }))
+			local tb =  require'telescope.builtin'
+			--vim.keymap.set('n', 'gr', vim.lsp.buf.references, merge_a2b(opts, { desc = "列出所有引用的地方" }))
+			vim.keymap.set('n', 'gr', tb.lsp_references, merge_a2b(opts, { desc = "列出所有引用的地方" }))
 		end,
 	})
 	-- bufferline
