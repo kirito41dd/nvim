@@ -6,6 +6,9 @@ set.clipboard = "unnamed" --剪切板和系统打通
 --set.autoindent = true
 set.splitbelow = true -- 控制默认的分屏方向
 set.splitright = true
+if vim.loop.os_uname().sysname == "Windows_NT" then
+	set.shellcmdflag = "--login -i -c"
+end
 
 require("autocmd")
 require("keymap").setup()

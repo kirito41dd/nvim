@@ -10,7 +10,7 @@
   "go.nvim": { "branch": "master", "commit": "a8095eb334495caec3099b717cc7f5b1fbc3e628" },
   "guihua.lua": { "branch": "master", "commit": "ab8b1f09603cc268770efd057115035dc6cfa83d" },
   "hardhacker": { "branch": "main", "commit": "56482ba10e9271306d40a1038da4e50978c31b78" },
-  "lazy.nvim": { "branch": "main", "commit": "67ae8bbbe3985e380b98abeaf6c567c422b29746" },
+  "lazy.nvim": { "branch": "main", "commit": "6b2311a46a3808e366bb251270f4cc04afb421ed" },
   "lspkind-nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
   "lualine-lsp-progress": { "branch": "master", "commit": "56842d097245a08d77912edf5f2a69ba29f275d7" },
   "lualine.nvim": { "branch": "master", "commit": "05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9" },
