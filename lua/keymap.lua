@@ -60,7 +60,7 @@ function module.setup()
 			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, merge_a2b(opts, { desc = "lsp重命名" }))
 			vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action,
 				merge_a2b(opts, { desc = "code action" }))
-			local tb =  require'telescope.builtin'
+			local tb = require 'telescope.builtin'
 			--vim.keymap.set('n', 'gr', vim.lsp.buf.references, merge_a2b(opts, { desc = "列出所有引用的地方" }))
 			vim.keymap.set('n', 'gr', tb.lsp_references, merge_a2b(opts, { desc = "列出所有引用的地方" }))
 		end,
@@ -70,6 +70,8 @@ function module.setup()
 	vim.keymap.set("n", "<space>l", ":BufferLineCycleNext<CR>", merge_a2b(opt, { desc = "下一个tab" }))
 	--toggleterm
 	vim.keymap.set("n", "<Leader>T", ":ToggleTerm<CR>", merge_a2b(opt, { desc = "打开终端" }))
+	--dap
+	vim.keymap.set("n", "<leader>db", ":lua require'dap'.toggle_breakpoint()<CR>", { desc = "dap断点" })
 end
 
 -- rust-tools
@@ -84,6 +86,11 @@ end
 
 function module.toggleterm()
 	vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], { buffer = 0, desc = "终端进入命令模式" })
+end
+
+function module.neovide()
+	vim.keymap.set("i", "<c-v>", "<c-r>+", { desc = "neovide下粘贴" })
+	vim.keymap.set("c", "<c-v>", "<c-r>+", { desc = "neovide下粘贴" })
 end
 
 return module

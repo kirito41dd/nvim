@@ -2,6 +2,9 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = { "rust_analyzer", "gopls", "lua_ls" }
 })
+require("mason-nvim-dap").setup({
+	ensure_installed = { "delve" } -- delve for golang
+})
 
 local lspconfig = require("lspconfig")
 require("mason-lspconfig").setup_handlers {

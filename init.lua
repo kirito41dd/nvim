@@ -35,6 +35,7 @@ if vim.g.neovide then
 	-- vim.cmd.colorscheme("catppuccin-latte")
 	vim.o.background = "light"
 	vim.cmd.colorscheme("one-nvim")
+	require("keymap").neovide()
 end
 
 require("lsp-setup")
