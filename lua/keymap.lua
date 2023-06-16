@@ -71,7 +71,16 @@ function module.setup()
 	--toggleterm
 	vim.keymap.set("n", "<Leader>T", ":ToggleTerm<CR>", merge_a2b(opt, { desc = "打开终端" }))
 	--dap
-	vim.keymap.set("n", "<leader>db", ":lua require'dap'.toggle_breakpoint()<CR>", { desc = "dap断点" })
+	vim.keymap.set("n", "<leader>dr", ":lua require'dap'.continue()<CR>", { desc = "开始调试" })
+	vim.keymap.set("n", "<leader>db", ":lua require'dap'.toggle_breakpoint()<CR>", { desc = "设置断点" })
+	vim.keymap.set("n", "<leader>dB", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR>",
+		{ desc = "设置条件断点" })
+	vim.keymap.set("n", "<leader>dn", ":lua require'dap'.step_over()<CR>", { desc = "step over" })
+	vim.keymap.set("n", "<leader>di", ":lua require'dap'.step_into()<CR>", { desc = "step into" })
+	vim.keymap.set("n", "<leader>do", ":lua require'dap'.step_out()<CR>", { desc = "step out" })
+	vim.keymap.set("n", "<leader>du", ":lua require'dapui'.toggle()<CR>", { desc = "展示ui" })
+	vim.keymap.set("n", "<leader>dq", ":DapTerminate<CR>", { desc = "停止调试" })
+	vim.keymap.set("n", "<leader>dR", ":DapRerun<CR>", { desc = "重启调试" })
 end
 
 -- rust-tools

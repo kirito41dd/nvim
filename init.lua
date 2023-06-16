@@ -33,9 +33,11 @@ require("lazy").setup("plugins")
 if vim.g.neovide then
 	-- vim.cmd.colorscheme("hardhacker")
 	-- vim.cmd.colorscheme("catppuccin-latte")
+	vim.o.title = true
 	vim.o.background = "light"
 	vim.cmd.colorscheme("one-nvim")
 	require("keymap").neovide()
 end
 
 require("lsp-setup")
+require("debugging")
