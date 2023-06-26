@@ -45,7 +45,7 @@ function module.setup()
 			vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, merge_a2b(opts, { desc = "跳转到声明" }))
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, merge_a2b(opts, { desc = "跳转到定义" }))
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, merge_a2b(opts, { desc = "显示提示" }))
-			vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, merge_a2b(opts, { desc = "跳转到实现" }))
+			--vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, merge_a2b(opts, { desc = "跳转到实现" }))
 			vim.keymap.set('n', '<space>sk', vim.lsp.buf.signature_help,
 				merge_a2b(opts, { desc = "显示signature帮助" }))
 			vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder,
@@ -63,6 +63,7 @@ function module.setup()
 			local tb = require 'telescope.builtin'
 			--vim.keymap.set('n', 'gr', vim.lsp.buf.references, merge_a2b(opts, { desc = "列出所有引用的地方" }))
 			vim.keymap.set('n', 'gr', tb.lsp_references, merge_a2b(opts, { desc = "列出所有引用的地方" }))
+			vim.keymap.set('n', 'gi', tb.lsp_implementations, merge_a2b(opts, { desc = "跳转到实现" }))
 		end,
 	})
 	-- bufferline
