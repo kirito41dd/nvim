@@ -52,7 +52,7 @@ return {
 					['<C-u>'] = cmp.mapping.scroll_docs(-4), -- 滑动文档
 					['<C-d>'] = cmp.mapping.scroll_docs(4),
 					['<C-Space>'] = cmp.mapping.complete(),
-					['<C-c>'] = cmp.mapping.abort(),    -- 取消
+					['<C-c>'] = cmp.mapping.abort(), -- 取消
 					['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 				sources = cmp.config.sources(
@@ -65,6 +65,7 @@ return {
 					{
 						{ name = "buffer" },
 						{ name = 'path' },
+						{ name = "crates" },
 					}
 				),
 				-- 使用lspkind-nvim显示类型图标

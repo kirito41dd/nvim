@@ -67,8 +67,8 @@ function module.setup()
 		end,
 	})
 	-- bufferline
-	vim.keymap.set("n", "<space>h", ":BufferLineCyclePrev<CR>", merge_a2b(opt, { desc = "上一个tab" }))
-	vim.keymap.set("n", "<space>l", ":BufferLineCycleNext<CR>", merge_a2b(opt, { desc = "下一个tab" }))
+	vim.keymap.set("n", "<C-,>", ":BufferLineCyclePrev<CR>", merge_a2b(opt, { desc = "上一个tab" }))
+	vim.keymap.set("n", "<C-.>", ":BufferLineCycleNext<CR>", merge_a2b(opt, { desc = "下一个tab" }))
 	--toggleterm
 	vim.keymap.set("n", "<Leader>T", ":ToggleTerm<CR>", merge_a2b(opt, { desc = "打开终端" }))
 	--dap
@@ -88,8 +88,8 @@ end
 function module.rust_tools(rt, bufnr)
 	vim.keymap.set("n", "<Leader>rh", rt.hover_actions.hover_actions,
 		{ buffer = bufnr, desc = "rust tool hover action" })
-	vim.keymap.set("n", "<Leader>ra", rt.code_action_group.code_action_group,
-		{ buffer = bufnr, desc = "rust tool code action" })
+	--vim.keymap.set("n", "<Leader>ra", rt.code_action_group.code_action_group,
+	--	{ buffer = bufnr, desc = "rust tool code action" })
 	vim.keymap.set("n", "<Leader>rm", rt.expand_macro.expand_macro,
 		{ buffer = bufnr, desc = "rust tool 展开宏" })
 end
