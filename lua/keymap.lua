@@ -101,6 +101,10 @@ end
 function module.neovide()
 	vim.keymap.set("i", "<c-v>", "<c-r>+", { desc = "neovide下粘贴" })
 	vim.keymap.set("c", "<c-v>", "<c-r>+", { desc = "neovide下粘贴" })
+	if vim.fn.has("macunix") then
+		vim.keymap.set("i", "<D-v>", "<c-r>+", { desc = "neovide下粘贴" })
+		vim.keymap.set("c", "<D-v>", "<c-r>+", { desc = "neovide下粘贴" })
+	end
 end
 
 return module

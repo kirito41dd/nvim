@@ -1,4 +1,5 @@
 local set = vim.o
+
 set.number = true         --行号
 set.clipboard = "unnamed" --剪切板和系统打通
 --set.tablestop = 4         --tab长度
