@@ -82,6 +82,8 @@ function module.setup()
 	vim.keymap.set("n", "<leader>du", ":lua require'dapui'.toggle()<CR>", { desc = "展示ui" })
 	vim.keymap.set("n", "<leader>dq", ":DapTerminate<CR>", { desc = "停止调试" })
 	vim.keymap.set("n", "<leader>dR", ":DapRerun<CR>", { desc = "重启调试" })
+	--加载工作区
+	vim.keymap.set("n","<Leader>,",":lua require'persistence'.load()<CR>", merge_a2b(opt, { desc = "加载上次工作区"}))
 end
 
 -- rust-tools
